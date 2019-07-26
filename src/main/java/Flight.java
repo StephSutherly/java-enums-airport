@@ -21,4 +21,14 @@ public class Flight {
     public int passengerCount() {
         return this.passengers.size();
     }
+
+    public int remainingSeatCount() {
+        return plane.getCapacity() - passengerCount();
+    }
+
+    public void addPassenger(Passenger passenger) {
+        if (remainingSeatCount() >= 1) {
+            this.passengers.add(passenger);
+        }
+    }
 }
